@@ -30,8 +30,10 @@ Route::get('/contact',[TestController::class, 'viewContactPage'])->name('contact
 
 Route::get('/overons',[TestController::class, 'viewOveronsPage'])->name('overons');
 
-Route::get('/events',[TestController::class, 'viewEventsPage'])->name('events');
+Route::get('/events',[TestController::class, 'viewEventsPage'])->name('events') -> middleware('auth');
+Route::get('/admin',[TestController::class, 'viewAdminPage'])->name('admin') -> middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
+

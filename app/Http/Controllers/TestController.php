@@ -25,4 +25,7 @@ class TestController extends Controller
     public function viewEventsPage(){
         return view('events');
     }
+    public function viewAdminPage(){
+        return view('admin');
+    }
 }

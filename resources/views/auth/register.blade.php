@@ -11,52 +11,63 @@
 
             <!-- Name -->
             <div>
-                <x-input-label for="name" :value="__('Name')" />
+                <x-input-label for="name" :value="('Name')" />
 
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
-                <x-input-label for="email" :value="__('Email')" />
+                <x-input-label for="email" :value="('Email')" />
 
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="('Password')" />
 
                 <x-text-input id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" :value="('Confirm Password')" />
 
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+            </div>
+<!-- Birthdate -->
+            <div class="mt-4">
+                <x-input-label for="birthdate" :value="('Birthdate')" />
 
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                <x-text-input id="birthdate" class="block mt-1 w-full"
+                                type="date"
+                                name="birthdate"
+                                required />
+            </div>
+
+            <!-- Iban -->
+            <div class="mt-4">
+                <x-input-label for="iban" :value="('Iban')" />
+
+                <x-text-input id="birthdate" class="block mt-1 w-full"
+                                type="text"
+                                name="iban"
+                                required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ ('Already registered?') }}
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ ('Register') }}
                 </x-primary-button>
             </div>
         </form>
