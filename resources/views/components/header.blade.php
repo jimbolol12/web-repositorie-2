@@ -13,6 +13,8 @@
 
             </form>
             <a href="{{ route('events') }}">event page</a>
+            @if(Auth::user()->is_admin == 1)
+            <a href="{{ route('admin') }}">admin page</a>@endif
         @else
             <a href="{{ route('login') }}">login</a>
             <a href="{{ route('register') }}">register</a>
