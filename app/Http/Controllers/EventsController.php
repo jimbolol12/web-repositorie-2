@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class EventsController extends Controller
 {
@@ -80,5 +81,21 @@ class EventsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function processAddEvent(Request $request){
+        $newEvent = new Event();
+        $newEvent->name = $request->name;
+        $newEvent->photo = $request->photo;
+        $newEvent->event_start = $request->event_start;
+        $newEvent->event_end = $request->event_end;
+        $newEvent->available_tickets = $request->available_tickets;
+        $newEvent->location = $request->location;
+        $newEvent->price = $request->price;
+        $newEvent->description = $request->description;
+
+        $newEvent->save();
+
+        return redirect()->route('events');
     }
 }

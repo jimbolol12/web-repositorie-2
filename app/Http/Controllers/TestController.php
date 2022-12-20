@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\models\Event;
 
 class TestController extends Controller
 {
@@ -23,9 +24,17 @@ class TestController extends Controller
         return view('overons');
     }
     public function viewEventsPage(){
-        return view('events');
+        $events = Event::all();
+        return view('events', [
+            'events' => $events, 
+        ]);
     }
     public function viewAdminPage(){
         return view('admin');
     }
+    public function viewAddEventPage(){
+        return view('add-event-form');
+    }
+
+
 }

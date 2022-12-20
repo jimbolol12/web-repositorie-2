@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,10 @@ Route::get('/overons',[TestController::class, 'viewOveronsPage'])->name('overons
 
 Route::get('/events',[TestController::class, 'viewEventsPage'])->name('events') -> middleware('auth');
 Route::get('/admin',[TestController::class, 'viewAdminPage'])->name('admin') -> middleware('auth');
+Route::get('/Add-event-form',[TestController::class, 'viewAddEventPage'])->name('add-event-form') -> middleware('auth');
+
+
+Route::post('/Add-event-form',[EventsController::class, 'processAddEvent'])->name('safe-event-form');
 
 Route::get('/dashboard', function () {
     return view('home');

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('location');
             $table->decimal('price', 20, 2);
             $table->text('description');
+            $table->timestamps();
         });
     }
 
